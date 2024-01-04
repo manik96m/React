@@ -1,3 +1,6 @@
+import { getImageUrl } from '../utils';
+import { people } from '../data';
+
 export default function List() {
   const listItems = people.map(person =>
     <li key={person.id}>

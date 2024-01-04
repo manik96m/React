@@ -1,3 +1,5 @@
+import { getImageUrl } from '../utils';
+
 function Avatar({ person, size }) {
   return (
     <img
@@ -25,7 +27,7 @@ export default function Profile() {
     <Card>
       <Avatar
         size={100}
-        person={{ 
+        person={{
           name: 'Katsuko Saruhashi',
           imageId: 'YfeOqp2'
         }}
