@@ -3,8 +3,11 @@ Component
 - Importing & Exporting components
 
 Component should be pure
-- should not change any existing objects or variables. Even the data received from props.
+- should not change any existing objects or variables (No Mutation). 
+- any data received from input (props), should not be changed.
 - Given the same input (props), it should return the same result.
+- Strict mode can be used to detect impure components. It has no impact on production.
+- Side effects does not belong to components.
 
 JSX
 - JSX is used to represent markup
