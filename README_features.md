@@ -22,7 +22,7 @@ Passing Props (Avatar.tsx)
 - Spread syntax can be used to pass an object of props to child component. (<Avatar {...props} />)
 
 Children prop (ChildrenProp.tsx)
-Content inside a JSX tag, is received as a prop called children.
+- Content inside a JSX tag, is received as a prop called children.
 
 Conditional Rendering (ConditionalRendering.tsx)
 - using if, &&, and ternary operator (? :)
