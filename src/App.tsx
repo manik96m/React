@@ -7,6 +7,8 @@ import Gallery from "./components/State";
 import CounterBatchUpdate from "./components/BatchUpdate";
 import CounterQueueUpdate from "./components/QueueUpdate";
 import BucketList from "./components/UpdatingObjectsInsideArrays";
+import TaskApp from "./components/ExtractingStateToReducer/ExtractingStateToReducer";
+import UsingContext from "./components/UsingContext/UsingContext";
 
 export default function App() {
   const name = "Manik";
@@ -28,6 +30,10 @@ export default function App() {
       <CounterQueueUpdate />
 
       <BucketList />
+
+      <TaskApp />
+
+      <UsingContext />
     </section>
   );
 }

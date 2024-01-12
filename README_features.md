@@ -26,7 +26,7 @@ Javascript in JSX
 [Children prop](/src/components/ChildrenProp.tsx)
 - Content inside a JSX tag, is received as a prop called children.
 
-Conditional Rendering (ConditionalRendering.tsx)
+[Conditional Rendering](/src/components/ConditionalRendering.tsx)
 - using if, &&, and ternary operator (? :)
 
 [Rendering Lists](/src/components/List.tsx)
@@ -87,3 +87,50 @@ Updating Objects in State
 - Create a new one when value needs to be changed.
 - Treat them like they are immutable.
 - IMP: [Updating Objects inside Arrays](https://react.dev/learn/updating-arrays-in-state#updating-objects-inside-arrays)
+
+
+Managing State
+
+[Declarative UI](https://react.dev/learn/reacting-to-input-with-state#thinking-about-ui-declaratively) - useState
+- Identify different visual states of component (Ex(Form) - Empty, Typing, Submitting, ...)
+- Determine what triggers state changes (user input, network request/response, ...)
+- Represent state in memory with useState
+- Remove any non-essential state variables or even merge state variables to simplify state. [Docs](https://react.dev/learn/reacting-to-input-with-state#thinking-about-ui-declaratively)
+- Connect event handlers to set state
+
+Principles for Structuring State
+- Group related state
+- Avoid contradictions in state (state variables that contradict or disagree with each other)
+- Avoid redundant state (it might already be possible to derive some information from a prop or existing state variable)
+- Avoid duplication in state
+- Avoid deeply nested state (inconvenient to update)
+
+Sharing State between components
+- By lifting the state up to a common parent. Here child components can be referred to as controlled components because they are driven by props.
+
+[Single Source of truth for each state](https://react.dev/learn/sharing-state-between-components#a-single-source-of-truth-for-each-state)
+- It doesn’t mean that all state lives in one place—but that for each piece of state, there is a specific component that holds (owns) that piece of information.
+
+[Preserving and Resetting State](https://react.dev/learn/preserving-and-resetting-state#state-is-tied-to-a-position-in-the-tree)
+- Component state is held inside React. 
+- Imp: React associates state with the correct component by where that component sits in the render tree.
+- State of a component is only removed, when the component is removed from its position or a different component is rendered at the same position.
+
+[Extracting State logic into a Reducer](/src/components/ExtractingStateToReducer/ExtractingStateToReducer.tsx) - useReducer
+- It helps remove state logic from the component
+- Reducers must be pure
+- No side effects, requests or timeouts in reducer
+- Each action describes single user interaction
+
+[Passing Data Deeply with Context](/src/components/UsingContext)
+- When multiple components in a tree need the same data then it can be lead to situtation called "prop drilling"
+- Context lets a parent component provide data to the entire tree below it
+- Creating and using context
+    - Create context
+    - Use the context (in children components)
+    - Provide the context (in parent)
+- Child component will get the context value from nearest context provider
+
+[Combining a reducer with context](https://react.dev/learn/scaling-up-with-reducer-and-context#combining-a-reducer-with-context)
+
+
