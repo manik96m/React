@@ -26,7 +26,7 @@ Javascript in JSX
 [Children prop](/src/components/ChildrenProp.tsx)
 - Content inside a JSX tag, is received as a prop called children.
 
-Conditional Rendering (ConditionalRendering.tsx)
+[Conditional Rendering](/src/components/ConditionalRendering.tsx)
 - using if, &&, and ternary operator (? :)
 
 [Rendering Lists](/src/components/List.tsx)
@@ -113,7 +113,7 @@ Sharing State between components
 
 [Preserving and Resetting State](https://react.dev/learn/preserving-and-resetting-state#state-is-tied-to-a-position-in-the-tree)
 - Component state is held inside React. 
-- React associates state with the correct component by where that component sits in the render tree.
+- Imp: React associates state with the correct component by where that component sits in the render tree.
 - State of a component is only removed, when the component is removed from its position or a different component is rendered at the same position.
 
 [Extracting State logic into a Reducer](/src/components/ExtractingStateToReducer/ExtractingStateToReducer.tsx) - useReducer
@@ -124,7 +124,7 @@ Sharing State between components
 
 [Passing Data Deeply with Context](/src/components/UsingContext)
 - When multiple components in a tree need the same data then it can be lead to situtation called "prop drilling"
-- Context lets a prent component provide data to the entire tree below it
+- Context lets a parent component provide data to the entire tree below it
 - Creating and using context
     - Create context
     - Use the context (in children components)
