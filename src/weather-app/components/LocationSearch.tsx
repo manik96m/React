@@ -1,24 +1,22 @@
-import { Autocomplete, Card, TextField } from "@mui/material";
-import WeatherCard from "./WeatherCard";
+import { Autocomplete, TextField } from "@mui/material";
+import { LOCATIONS } from "../constants";
 
-export default function LocationSearch() {
-  const top10Locations = [
-    { label: "Ottawa", id: 1 },
-    { label: "New York", id: 2 },
-  ];
+export default function LocationSearch({ selectedLocation, onLocationChange }) {
+  const inputValue =
+    LOCATIONS.find((location) => location === selectedLocation) || LOCATIONS[0];
 
   return (
-    <Card variant="outlined">
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo"
-        options={top10Locations}
-        sx={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Location" />}
-      />
-      <WeatherCard day="Monday" icon="sunny" temperature="20" />
-      <WeatherCard day="Monday" icon="sunny" temperature="20" />
-      <WeatherCard day="Monday" icon="sunny" temperature="20" />
-    </Card>
+    <Autocomplete
+      disablePortal
+      id="combo-box"
+      size="small"
+      options={LOCATIONS}
+      sx={{ width: 300, bgcolor: "white" }}
+      value={inputValue}
+      onChange={(event, newSelectedLocation) => {
+        onLocationChange(newSelectedLocation);
+      }}
+      renderInput={(params) => <TextField {...params} label="Location" />}
+    />
   );
 }

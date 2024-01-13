@@ -1,0 +1,32 @@
+.app-header {
+  background-image: url("./images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  min-height: 96vh;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 28rem;
+}
+
+.weather-cards-wrapper {
+  display: flex;
+  justify-content: space-around;
+  min-width: 30rem;
+}
+
+.weather-card {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
