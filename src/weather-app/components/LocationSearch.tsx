@@ -1,9 +1,16 @@
 import { Autocomplete, TextField } from "@mui/material";
 import { LOCATIONS } from "../constants";
+import { useContext } from "react";
+import {
+  WeatherActionTypes,
+  WeatherContext,
+  WeatherDispatchContext,
+} from "../context/WeatherContext";
 
-export default function LocationSearch({ selectedLocation, onLocationChange }) {
-  const inputValue =
-    LOCATIONS.find((location) => location === selectedLocation) || LOCATIONS[0];
+export default function LocationSearch() {
+  const { location } = useContext(WeatherContext);
+  const weatherDispatch = useContext(WeatherDispatchContext);
+  const inputValue = LOCATIONS.find((loc) => loc === location) || LOCATIONS[0];
 
   return (
     <Autocomplete
@@ -14,7 +21,10 @@ export default function LocationSearch({ selectedLocation, onLocationChange }) {
       sx={{ width: 300, bgcolor: "white" }}
       value={inputValue}
       onChange={(event, newSelectedLocation) => {
-        onLocationChange(newSelectedLocation);
+        weatherDispatch({
+          type: WeatherActionTypes.LOCATION_CHANGE,
+          location: newSelectedLocation,
+        });
       }}
       renderInput={(params) => <TextField {...params} label="Location" />}
     />
