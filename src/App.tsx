@@ -9,9 +9,12 @@ import CounterQueueUpdate from "./components/QueueUpdate";
 import BucketList from "./components/UpdatingObjectsInsideArrays";
 import TaskApp from "./components/ExtractingStateToReducer/ExtractingStateToReducer";
 import UsingContext from "./components/UsingContext/UsingContext";
+import WeatherApp from "./weather-app/App";
 
 export default function App() {
   const name = "Manik";
+
+  return <WeatherApp />;
 
   return (
     <section>
