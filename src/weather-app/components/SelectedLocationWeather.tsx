@@ -1,9 +1,12 @@
 import { Typography } from "@mui/material";
+import { useContext } from "react";
+import { WeatherContext } from "../context/WeatherContext";
 
 export default function SelectedLocationWeather({
-  selectedLocation,
   selectedDayWeather: { temp, weather_desc, iconId },
 }) {
+  const { location } = useContext(WeatherContext);
+
   return (
     <div className="flex-wrapper">
       <img src={`https://openweathermap.org/img/wn/${iconId}@2x.png`} />
@@ -13,7 +16,7 @@ export default function SelectedLocationWeather({
         </Typography>
 
         <Typography gutterBottom variant="h5" component="div" fontWeight="bold">
-          {selectedLocation.label}
+          {location.label}
         </Typography>
 
         <Typography gutterBottom variant="subtitle1" component="div">
